@@ -49,6 +49,24 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        RecyclerView lista = findViewById(R.id.lista);
+        lista.setHasFixedSize(true);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        lista.setLayoutManager(llm);
+
+        ArrayList<Dados> dadosList = new ArrayList<>();
+        dadosList.add(new Dados("Título 1"));
+        dadosList.add(new Dados("Título 2"));
+        dadosList.add(new Dados("Título 3"));
+        dadosList.add(new Dados("Título 4"));
+        dadosList.add(new Dados("Título 5"));
+        dadosList.add(new Dados("Título 6"));
+        dadosList.add(new Dados("Título 7"));
+        dadosList.add(new Dados("Título 8"));
+
+        AdaterList adpt = new AdaterList(dadosList);
+        lista.setAdapter(adpt);
+
     }
 
     @Override
